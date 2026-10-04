@@ -119,33 +119,52 @@ h3 {
   font-weight: 700;
 }
 
-/* 表格 */
-.table-wrap {
-  overflow-x: auto;
-  margin: 0.8em 0 1.8em 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+/* 卡片式记录展示（教育/工作/项目/论文/著作通用），手机友好，不需要横向滚动 */
+.cv-cards {
+  display: flex;
+  flex-direction: column;
+  margin: 0.9em 0 1.9em 0;
+  border-top: 1px solid var(--line);
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.89em;
+.cv-card {
   background: #fff;
-  min-width: 620px;
-}
-th {
-  background-color: var(--navy);
-  color: #f6f1e4;
-  text-align: left;
-  padding: 9px 11px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-td {
-  padding: 9px 11px;
+  border-left: 3px solid var(--gold);
   border-bottom: 1px solid var(--line);
-  vertical-align: top;
+  padding: 10px 4px 10px 14px;
 }
-tr:nth-child(even) td { background-color: #f6f2e9; }
+.cv-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+}
+.cv-card-title {
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.cv-card-period {
+  color: var(--muted);
+  font-size: 0.85em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.cv-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 4px;
+  column-gap: 16px;
+  font-size: 0.85em;
+  color: #534f45;
+  margin-top: 4px;
+}
+.cv-meta-item { white-space: normal; }
+.cv-meta-label {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 4px;
+}
 
 .status-ongoing { color: #1d7a4c; font-weight: 700; }
 .status-done { color: var(--muted); font-weight: 600; }
